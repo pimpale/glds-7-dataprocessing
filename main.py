@@ -2,10 +2,6 @@ import sys
 import numpy as np
 import pandas as pd
 
-hypocotyl = fix_dataframe(pd.read_csv('GLDS-7_hypocotyl.comp.marker_table.txt', sep='\t'))
-root = fix_dataframe(pd.read_csv('GLDS-7_root.comp.marker_table.txt', sep='\t'))
-shoot = fix_dataframe(pd.read_csv('GLDS-7_shoot.comp.marker_table.txt', sep='\t'))
-whole_plant = fix_dataframe(pd.read_csv('GLDS-7_whole_plant.comp.marker_table.txt', sep='\t'))
 
 def fix_dataframe(dataframe):
     has_desc=pd.notna(dataframe['Description'])
@@ -15,7 +11,7 @@ def fix_dataframe(dataframe):
 
 # prints feature p and fold change from row
 def get_vals(row):
-    print(row[1]['Description'].split()[0], '  FP: ', row[1]['Feature P'], '  FC: ', row[1]['Fold Change'])
+    print(row[1]['Description'].upper(), ' UP: ', row[1]['Upregulated In'], '  FP: ', row[1]['Feature P'], '  FC: ', row[1]['Fold Change'])
 
 
 def gene_input():
@@ -50,3 +46,9 @@ def search(genelist, filterfunc):
     ]:
         print(dataframe[1])
         get_genes(genelist, dataframe[0], filterfunc)
+
+
+hypocotyl = fix_dataframe(pd.read_csv('GLDS-7_hypocotyl.comp.marker_table.txt', sep='\t'))
+root = fix_dataframe(pd.read_csv('GLDS-7_root.comp.marker_table.txt', sep='\t'))
+shoot = fix_dataframe(pd.read_csv('GLDS-7_shoot.comp.marker_table.txt', sep='\t'))
+whole_plant = fix_dataframe(pd.read_csv('GLDS-7_whole_plant.comp.marker_table.txt', sep='\t'))
