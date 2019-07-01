@@ -1,4 +1,5 @@
 import sys
+import re
 import numpy as np
 import pandas as pd
 
@@ -34,8 +35,9 @@ def all(row):
 
 def get_genes(genelist, dataframe, filterfunc):
     for row in filter(filterfunc, dataframe.iterrows()):
-        if row[1]['Description'] in genelist:
-            get_vals(row)
+        for gene in genelist:
+            if re.match(gene, row[1]['Description']):
+                get_vals(row)
 
 def search(genelist, filterfunc):
     for dataframe in [
