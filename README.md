@@ -7,6 +7,8 @@ Source main.py into python or ipython in order to more easily analyze plant geno
 > exec(open('main.py').read())
 
 # input a list of genes into an array
+# genes can be capital or not
+# also can be regex
 > genelist = gene_input()
 CEV1
 FAD3
@@ -29,15 +31,15 @@ PDF2
 # search in all gene lists with lax requirements on biological and statistical significance
 > search(genelist, semistrict)
 ---SHOOT---
-ctr1   FP:  0.04181615464389932   FC:  1.3107387065931944
-erf1   FP:  0.14522020473344033   FC:  1.2696163060555106
-ers1   FP:  0.020548776037499383   FC:  1.3612900717945409
-pdf1   FP:  0.10593473206112458   FC:  1.1972316427261593
+CTR1   FP:  0.04181615464389932   FC:  1.3107387065931944
+ERF1   FP:  0.14522020473344033   FC:  1.2696163060555106
+ERS1   FP:  0.020548776037499383   FC:  1.3612900717945409
+PDF1   FP:  0.10593473206112458   FC:  1.1972316427261593
 ---ROOT---
-pdf2   FP:  0.10650910262844282   FC:  1.1459810908232937
+PDF2   FP:  0.10650910262844282   FC:  1.1459810908232937
 ---HYPOCOTYL---
-ein2   FP:  0.09624827422814496   FC:  1.159931075849986
-ctr1   FP:  0.08996938052495372   FC:  1.1461526184057065
+EIN2   FP:  0.09624827422814496   FC:  1.159931075849986
+CTR1   FP:  0.08996938052495372   FC:  1.1461526184057065
 ---WHOLE PLANT---
 
 ```
